@@ -15,8 +15,10 @@ Should be able to add new customer
     Set selenium timeout        10s
 
     #open the browser
+    
+    ${service}=  Evaulate  sys.modules['selenium.webdriver.firefox.service'].Service('/snap/bin/geckodriver')   sys, selenium.webdriver.firefox.service
     log                         Starting the test case!
-    open browser                https://automationplayground.com/crm/      headlessFirefox
+    open browser                https://automationplayground.com/crm/      browser=headlessFirefox   service=${service}
 
     # resize browser window for recording
     Set window position         x=341   y=169
