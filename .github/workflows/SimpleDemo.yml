@@ -22,7 +22,7 @@ jobs:
         python-version: "3.10"
 
     - name: Install firefox
-      run: sudo apt-get install -y firefox
+      run: apt-get install -y firefox
 
     - name: Download geckodriver
       run: |
