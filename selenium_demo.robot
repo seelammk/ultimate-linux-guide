@@ -16,7 +16,7 @@ Should be able to add new customer
 
     #open the browser
     
-    ${service}=  Evaulate  sys.modules['selenium.webdriver.firefox.service'].Service('/snap/bin/geckodriver')   sys, selenium.webdriver.firefox.service
+    ${service}=  Evaluate  sys.modules['selenium.webdriver.firefox.service'].Service('/snap/bin/geckodriver')   sys, selenium.webdriver.firefox.service
     log                         Starting the test case!
     open browser                https://automationplayground.com/crm/      browser=headlessFirefox   service=${service}
 
