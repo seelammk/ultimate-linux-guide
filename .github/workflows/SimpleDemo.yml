@@ -30,8 +30,8 @@ jobs:
         robot -d results github_actions_demo.robot
 
     - name: Upload Results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-             name: test-results
-             path: results
+          name: test-results
+          path: results
              
