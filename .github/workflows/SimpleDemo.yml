@@ -20,6 +20,14 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+
+    - name: Install firefox
+      run: sudo apt-get install -y firefox
+
+    - name: Download geckodriver
+      run: |
+            wget "https://github.com/mozilla/geckodriver/releases/download/v0.35.0/geckodriver-v0.35.0-linux-aarch64.tar.gz"
+            tar -xzf "geckodriver-v0.35.0-linux-aarch64.tar.gz"
         
     - name: Install dependencies
       run: |
@@ -27,7 +35,7 @@ jobs:
         
     - name: Run robotframework
       run: |
-        robot -d results github_actions_demo.robot
+        robot -d results selenium_demo.robot
 
     - name: Upload Results
       uses: actions/upload-artifact@v4
