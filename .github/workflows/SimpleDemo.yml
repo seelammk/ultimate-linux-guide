@@ -28,3 +28,10 @@ jobs:
     - name: Run robotframework
       run: |
         robot -d results github_actions_demo.robot
+
+    - name: Upload Results
+      uses: action/upload-artifact@v1
+      with:
+             name: test-results
+             path: results
+             
